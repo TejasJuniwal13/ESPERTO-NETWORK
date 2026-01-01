@@ -17,3 +17,22 @@ model Contact {
 
   @@index([email])
 }
+
+
+model Freelancer {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  phone     String
+  skills    String
+  state     String
+  city      String
+  resumeUrl String
+  status    Status   @default(PENDING)
+  createdAt DateTime @default(now())
+}
+
+enum Status {
+  PENDING
+  APPROVED
+}
