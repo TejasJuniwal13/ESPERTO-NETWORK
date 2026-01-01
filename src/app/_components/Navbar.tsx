@@ -67,16 +67,24 @@ export default function Navbar() {
                 Career
               </Link>
             </li>
+            <li>
+              <Link
+                href="/freelancer"
+                className="text-[#E5E7EB] hover:text-[#06B6D4] transition-colors"
+              >
+                Become a FreeLancer
+              </Link>
+            </li>
           </ul>
 
           {/* CTA / Auth */}
           <div className="hidden md:flex items-center space-x-3">
-            {/* <Link
+            <Link
               href="/login"
               className="text-xs font-medium text-[#F8FAFC] hover:text-[#06B6D4] transition-colors"
             >
               Login
-            </Link> */}
+            </Link>
 
             <Link
               href="/contact"
@@ -84,6 +92,13 @@ export default function Navbar() {
             >
               Get Started
             </Link>
+
+            {/* <Link
+              href="/contact"
+              className="inline-flex items-center rounded-full border border-[#06B6D4] bg-[#06B6D4] px-4 py-1.5 text-xs font-semibold text-[#0A0A0A] shadow-sm hover:bg-transparent hover:text-[#F8FAFC] transition-colors"
+            >
+              Become a FreeLancer 
+            </Link> */}
           </div>
         </div>
       </div>
