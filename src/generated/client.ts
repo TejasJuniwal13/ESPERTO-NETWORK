@@ -44,3 +44,8 @@ export { Prisma }
  * 
  */
 export type Contact = Prisma.ContactModel
+/**
+ * Model Freelancer
+ * 
+ */
+export type Freelancer = Prisma.FreelancerModel

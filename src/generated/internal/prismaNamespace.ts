@@ -384,7 +384,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Contact: 'Contact'
+  Contact: 'Contact',
+  Freelancer: 'Freelancer'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -400,7 +401,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "contact"
+    modelProps: "contact" | "freelancer"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -478,6 +479,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Freelancer: {
+      payload: Prisma.$FreelancerPayload<ExtArgs>
+      fields: Prisma.FreelancerFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.FreelancerFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.FreelancerFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>
+        }
+        findFirst: {
+          args: Prisma.FreelancerFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.FreelancerFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>
+        }
+        findMany: {
+          args: Prisma.FreelancerFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>[]
+        }
+        create: {
+          args: Prisma.FreelancerCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>
+        }
+        createMany: {
+          args: Prisma.FreelancerCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.FreelancerCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>[]
+        }
+        delete: {
+          args: Prisma.FreelancerDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>
+        }
+        update: {
+          args: Prisma.FreelancerUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>
+        }
+        deleteMany: {
+          args: Prisma.FreelancerDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.FreelancerUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.FreelancerUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>[]
+        }
+        upsert: {
+          args: Prisma.FreelancerUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FreelancerPayload>
+        }
+        aggregate: {
+          args: Prisma.FreelancerAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateFreelancer>
+        }
+        groupBy: {
+          args: Prisma.FreelancerGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FreelancerGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.FreelancerCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FreelancerCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -529,6 +604,22 @@ export const ContactScalarFieldEnum = {
 export type ContactScalarFieldEnum = (typeof ContactScalarFieldEnum)[keyof typeof ContactScalarFieldEnum]
 
 
+export const FreelancerScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  skills: 'skills',
+  state: 'state',
+  city: 'city',
+  resumeUrl: 'resumeUrl',
+  status: 'status',
+  createdAt: 'createdAt'
+} as const
+
+export type FreelancerScalarFieldEnum = (typeof FreelancerScalarFieldEnum)[keyof typeof FreelancerScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -576,6 +667,20 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Status'
+ */
+export type EnumStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Status'>
+    
+
+
+/**
+ * Reference to a field of type 'Status[]'
+ */
+export type ListEnumStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Status[]'>
     
 
 
@@ -688,6 +793,7 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   contact?: Prisma.ContactOmit
+  freelancer?: Prisma.FreelancerOmit
 }
 
 /* Types for Logging */
