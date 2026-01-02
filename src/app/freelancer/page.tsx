@@ -49,21 +49,22 @@ export default function FreelancerRegistration() {
 
         //backend Logic
         
-        const fd = new FormData();
-    fd.append("name", form.name);
-    fd.append("email", form.email);
-    fd.append("phone", form.phone);
-    fd.append("skills", form.skills);
-    fd.append("city", form.city);
+    const formData = new FormData();
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("phone", form.phone);
+    formData.append("skills", form.skills);
+    formData.append("state", form.state);
+    formData.append("city", form.city);
 
     if (form.resume) {
-      fd.append("resume", form.resume);
+      formData.append("resume", form.resume);
     }
 
     try {
         const res = await fetch("/api/freelancer/apply",{
             method: "POST",
-            body: fd
+            body: formData,
         });
 
         if (!res.ok) {
