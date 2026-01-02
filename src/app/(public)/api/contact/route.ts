@@ -1,5 +1,5 @@
-import { prisma } from "@/app/lib/prisma";
-import { resend } from "@/app/lib/resend";
+import { prisma } from "@/app/(public)/lib/prisma";
+import { resend } from "@/app/(public)/lib/resend";
 import { NextResponse } from "next/server";
 
 

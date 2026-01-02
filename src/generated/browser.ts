@@ -27,3 +27,13 @@ export type Contact = Prisma.ContactModel
  * 
  */
 export type Freelancer = Prisma.FreelancerModel
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel
+/**
+ * Model Employee
+ * 
+ */
+export type Employee = Prisma.EmployeeModel

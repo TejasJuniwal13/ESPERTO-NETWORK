@@ -10,4 +10,6 @@
  */
 export type * from './models/Contact'
 export type * from './models/Freelancer'
+export type * from './models/User'
+export type * from './models/Employee'
 export type * from './commonInputTypes'

@@ -1,8 +1,8 @@
 export const runtime = "nodejs";
 
-import cloudinary from "@/app/lib/cloudinary";
-import { prisma } from "@/app/lib/prisma";
-import { resend } from "@/app/lib/resend";
+import cloudinary from "@/app/(public)/lib/cloudinary";
+import { prisma } from "@/app/(public)/lib/prisma";
+import { resend } from "@/app/(public)/lib/resend";
 // import { error } from "console";
 import { NextResponse } from "next/server";
 

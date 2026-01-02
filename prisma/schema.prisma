@@ -36,3 +36,28 @@ enum Status {
   PENDING
   APPROVED
 }
+
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+}
+
+
+model Employee {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  phone     String
+  skills    String
+  resumeUrl String
+  hiredAt   DateTime @default(now())
+}

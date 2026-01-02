@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import indiaData from "@/app/data/indianstatescities.json"
+import indiaData from "@/app/(public)/data/indianstatescities.json"
 import { error } from "console";
 
 export default function FreelancerRegistration() {
@@ -182,9 +182,7 @@ export default function FreelancerRegistration() {
                                 {loading ? "Registering..." : "Register"}
                             </button>
 
-                            <p className="text-center text-slate-400 text-sm">
-                                Already have an account? <span className="text-[#06B6D4] cursor-pointer">Login</span>
-                            </p>
+                            
 
                         </form>
                     </div>
