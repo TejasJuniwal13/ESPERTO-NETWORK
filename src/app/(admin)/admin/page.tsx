@@ -241,14 +241,14 @@ export default function AdminPage() {
                       onClick={() => approve(f.id)}
                       className="bg-blue-600 text-white px-2 sm:px-3 py-1.5 rounded hover:bg-blue-500"
                     >
-                      Edit
+                      Approve
                     </button>
 
                     <button
                       onClick={() => reject(f.id)}
                       className="bg-red-600 text-white px-2 sm:px-3 py-1.5 rounded hover:bg-red-500"
                     >
-                      Delete
+                      Reject
                     </button>
                   </td>
                 </tr>
