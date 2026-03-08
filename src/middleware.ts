@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   console.log("\nmiddleware3 trigerred \n")
   // const role = request.cookies.get("role")?.value;
   const token = request.cookies.get("accessToken")?.value;
@@ -13,7 +13,9 @@ export function middleware(request: NextRequest) {
 
   try {
     const secret = new TextEncoder().encode(process.env.ACCESS_TOKEN_SECRET);
-    const {payload} =  jwtVerify(token,secret);
+
+    const {payload} = await jwtVerify(token,secret);
+
     const path = request.nextUrl.pathname;
     
       // protect admin routes
