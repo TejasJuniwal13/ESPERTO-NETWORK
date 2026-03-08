@@ -100,7 +100,7 @@ export default function EmployeesPage() {
 
   return (
     <div className="min-h-screen bg-white text-black">
-
+      <div className="p-5"><a href="/admin">{`<<<`}</a></div>
       {/* Page title */}
       <h1 className="text-3xl font-bold mt-8 mb-4 text-center">
         Selected Employees
