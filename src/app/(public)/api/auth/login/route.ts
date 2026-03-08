@@ -1,5 +1,7 @@
+import { generateAccessToken, generateRefreshToken } from "@/app/(public)/lib/hash";
 import { prisma } from "@/app/(public)/lib/prisma";
 import { cookies } from "next/headers";
+import { NextResponse } from "next/server";
 
 
 export async function POST(req: Request) {
@@ -19,17 +21,45 @@ export async function POST(req: Request) {
     return Response.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
+  const accessToken = await generateAccessToken(user.id , user.role , user.email);
+  const refreshToken = await generateRefreshToken(user.id);
+
+  const response  = NextResponse.json(
+    {
+      accessToken:accessToken,
+      refreshToken:refreshToken,
+      role:user.role
+    },
+    {status:200}
+  );
+
   // save role in cookie
-  (await cookies()).set("role", user.role, {
+  response.cookies.set("role", user.role, {
     httpOnly: true,
     sameSite: "strict",
     path: "/",
   });
 
+   response.cookies.set("accessToken", accessToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "strict",
+            path: "/",
+            maxAge: 15 * 60, // 15 minutes
+        });
+
+
+        // set refresh token in HTTP-only cookies 
+        response.cookies.set("refreshToken", refreshToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "strict",
+            path: "/",
+            maxAge: 7 * 24 * 60 * 60 // 7 days,
+        });
+
+
 
   // success
-  return Response.json({
-    message: "login success",
-    role: user.role, // ADMIN or USER
-  });
+  return response;
 }
