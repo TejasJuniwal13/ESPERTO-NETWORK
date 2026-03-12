@@ -4,6 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+
+const clients = [
+  "/clients/gsk.png",
+  "/clients/alexis.png",
+  "/clients/idfc.png",
+  "/clients/mahindra.png",
+  "/clients/renovision.png",
+  "/clients/tislabs.png",
+  "/clients/wipro.png"
+];
+
 export default function Home() {
   return (
     <AnimatePresence mode="wait">
@@ -117,39 +128,82 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CLIENT LOGOS */}
-        <section className="bg-slate-50 text-[#0A1A2F] py-16">
-          <div className="max-w-6xl mx-auto px-4 space-y-8">
 
-            <div className="text-center space-y-4">
-              <p className="text-base font-semibold uppercase tracking-[0.2em] text-slate-500">Our Clients</p>
-              <div className="w-40 mx-auto border-b-2 border-slate-500" />
-            </div>
 
-            <div className="flex items-center gap-10 overflow-x-auto w-full mx-auto max-w-5xl py-6">
-              {[1, 2, 3, 4].map((id) => (
-                <motion.div
-                  key={id}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
-                >
-                  <Image
-                    src={`/clients/client${id}.png`}
-                    width={120}
-                    height={120}
-                    alt={`client${id}`}
-                  />
-                </motion.div>
-              ))}
-            </div>
 
-          </div>
-        </section>
+    <section className="relative py-28 bg-[#050816] overflow-hidden">
+
+      {/* glow accent */}
+      <div className="absolute left-1/2 top-0 -translate-x-1/2
+      w-[500px] h-[200px] bg-[#06B6D4]/20 blur-[120px] rounded-full" />
+
+      <div className="relative max-w-6xl mx-auto px-6">
+
+        {/* Heading */}
+        <div className="text-center mb-16">
+
+          <p className="text-xs uppercase tracking-[0.4em] text-[#06B6D4]">
+            Trusted By
+          </p>
+
+          <h2 className="mt-4 text-3xl md:text-5xl font-semibold">
+            Companies that rely on
+            <span className="block bg-gradient-to-r from-[#39FF14] via-white to-[#06B6D4] bg-clip-text text-transparent">
+              Esperto Networks
+            </span>
+          </h2>
+
+        </div>
+
+        {/* Logos Grid */}
+<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+
+  {clients.map((logo, i) => (
+    <motion.div
+      key={i}
+      whileHover={{ y: -6, scale: 1.05 }}
+      transition={{ duration: 0.3 }}
+      className="
+      group
+      flex items-center justify-center
+      h-24
+      rounded-2xl
+      border border-white/10
+      backdrop-blur-md
+      p-6
+      transition-all duration-300
+      hover:border-[#06B6D4]/40
+      hover:bg-white/10
+      "
+    >
+
+      <img
+        src={logo}
+        alt="client logo"
+        className="
+        max-h-12
+        w-auto
+        object-contain
+        transition-transform duration-300
+        group-hover:scale-110
+        "
+      />
+
+    </motion.div>
+  ))}
+
+</div>
+      </div>
+
+    </section>
+ 
+
+
+
+
 
         {/* CTA */}
-        <section className="bg-[#0A1A2F] py-16 text-slate-100">
+          <section className="bg-[#0A1A2F] py-16 text-slate-100">
           <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between">
 
             <h2 className="text-2xl md:text-4xl font-semibold mb-8 md:mb-0">
@@ -179,3 +233,19 @@ export default function Home() {
     </AnimatePresence>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
