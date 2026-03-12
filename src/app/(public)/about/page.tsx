@@ -1,270 +1,501 @@
-"use client"
-// import React from "react";
+
+// "use client";
+
+// import { motion } from "framer-motion";
+
+// const reveal = {
+//   hidden: { opacity: 0, y: 60 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+// };
+
+// const About = () => {
+//   return (
+//     <div className="bg-[#050816] text-slate-100 overflow-x-hidden">
+
+//       {/* HERO STORY INTRO */}
+
+//       <section className="relative mx-auto max-w-6xl px-4 py-28 md:px-6">
+
+//         {/* subtle glow */}
+//         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-[#06B6D4]/20 blur-[120px] rounded-full" />
+
+//         <motion.div
+//           variants={reveal}
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true }}
+//           className="grid gap-14 md:grid-cols-2 items-center"
+//         >
+
+//           {/* TEXT */}
+//           <div className="space-y-6">
+
+//             <p className="text-xs uppercase tracking-[0.35em] text-[#06B6D4]">
+//               About Esperto Networks
+//             </p>
+
+//             <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+//               Engineering IT Infrastructure
+//               <span className="block bg-gradient-to-r from-[#FACC15] via-[#06B6D4] to-white bg-clip-text text-transparent">
+//                 across India.
+//               </span>
+//             </h1>
+
+//             <p className="text-slate-300 leading-relaxed">
+//               Esperto Networks is a professional IT service and support
+//               provider with over <b>13 years of industry expertise</b>.
+//               Through a nationwide network of certified engineers,
+//               we deliver enterprise-grade infrastructure solutions
+//               for organizations across India.
+//             </p>
+
+//           </div>
+
+//           {/* IMAGE */}
+//           <motion.div
+//             initial={{ opacity: 0, scale: 0.95 }}
+//             whileInView={{ opacity: 1, scale: 1 }}
+//             transition={{ duration: 0.8 }}
+//             className="relative"
+//           >
+//             <div className="absolute inset-0 -z-10 bg-[#06B6D4]/20 blur-3xl rounded-3xl" />
+
+//             <div className="overflow-hidden rounded-3xl border border-[#06B6D4]/20 shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
+//               <img
+//                 src="/about.png"
+//                 className="w-full h-full object-cover brightness-110 contrast-125"
+//               />
+//             </div>
+//           </motion.div>
+
+//         </motion.div>
+
+//       </section>
+
+
+//       {/* STORY PART 2 */}
+
+//       <section className="relative py-40 bg-gradient-to-b from-[#0A1A2F] via-[#0F4C5C] to-transparent">
+
+//         <div className="max-w-4xl mx-auto text-center px-6">
+
+//           <motion.h2
+//             variants={reveal}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#39FF14] via-white to-[#06B6D4] bg-clip-text text-transparent"
+//           >
+//             Built on Vision
+//           </motion.h2>
+
+//           <motion.p
+//             variants={reveal}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="mt-8 text-slate-300 leading-relaxed"
+//           >
+//             Esperto Networks was founded with a simple but powerful vision —
+//             to make enterprise-grade IT support accessible and affordable
+//             for every business, regardless of scale or location.
+//           </motion.p>
+
+//           <motion.p
+//             variants={reveal}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="mt-6 text-slate-300 leading-relaxed"
+//           >
+//             Over time we built a robust infrastructure and service network
+//             capable of supporting everything from small office environments
+//             to large-scale enterprise deployments and complex data center
+//             infrastructure.
+//           </motion.p>
+
+//         </div>
+
+//       </section>
+
+
+//       {/* STORY PART 3 */}
+
+//       <section className="py-40">
+
+//         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+
+//           <motion.div
+//             variants={reveal}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//           >
+//             <h3 className="text-3xl font-bold mb-4">
+//               Human Expertise
+//             </h3>
+
+//             <p className="text-slate-300 leading-relaxed">
+//               Our engineers continuously train in modern technologies
+//               including virtualization, cloud infrastructure,
+//               IP surveillance and unified communication.
+//             </p>
+//           </motion.div>
+
+//           <motion.div
+//             variants={reveal}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//           >
+//             <h3 className="text-3xl font-bold mb-4">
+//               Nationwide Presence
+//             </h3>
+
+//             <p className="text-slate-300 leading-relaxed">
+//               With engineers stationed across Tier 1, Tier 2
+//               and Tier 3 cities, Esperto Networks delivers
+//               rapid response and reliable support anywhere in India.
+//             </p>
+//           </motion.div>
+
+//         </div>
+
+//       </section>
+
+
+//       {/* VALUES SECTION (Your existing section kept but animated) */}
+
+//       <section className="relative py-28 px-4 bg-gradient-to-b from-[#105c7a] via-[#4d689c] to-[#79838f]">
+
+//         <motion.div
+//           initial={{ opacity: 0 }}
+//           whileInView={{ opacity: 1 }}
+//           transition={{ duration: 1 }}
+//           className="mx-auto max-w-5xl text-center mb-16"
+//         >
+
+//           <p className="text-lg font-medium text-slate-900">
+//             We are powered by care — strengthening our engineering,
+//             sharpening our discipline, and shaping every client
+//             relationship we build.
+//           </p>
+
+//         </motion.div>
+
+//         {/* keep your values grid exactly as is */}
+
+//       </section>
+
+
+//       {/* CTA */}
+
+//       <section className="bg-[#0A1A2F] py-20">
+
+//         <motion.div
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.7 }}
+//           className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between"
+//         >
+
+//           <h2 className="text-3xl md:text-4xl font-semibold mb-8 md:mb-0">
+//             What can we help you achieve?
+//           </h2>
+
+//           <div className="flex flex-col gap-4">
+
+//             <a
+//               href="/contact"
+//               className="px-8 py-4 rounded-full bg-[#06B6D4] text-[#0A1A2F] font-semibold hover:bg-[#08c3e5]"
+//             >
+//               Work With Us
+//             </a>
+
+//             <a
+//               href="/freelancer"
+//               className="px-8 py-4 rounded-full border border-slate-300 hover:border-white"
+//             >
+//               Apply for Job
+//             </a>
+
+//           </div>
+
+//         </motion.div>
+
+//       </section>
+
+//     </div>
+//   );
+// };
+
+// export default About;
+
+
+
+"use client";
+
+import { motion, Variants } from "framer-motion";
+
+/* ---------------- VARIANTS ---------------- */
+
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+};
+
+const item: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  }
+};
+
+const floatingGlow: Variants = {
+  animate: {
+    y: [0, -30, 0],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
+
+/* ---------------- COMPONENT ---------------- */
 
 const About = () => {
   return (
-    <div className="bg-[#050816] text-slate-100">
-      <section className="relative mx-auto max-w-6xl px-4 py-20 md:px-6">
-        
-        <div className="grid gap-12 md:grid-cols-2 items-center">
+    <div className="bg-[#050816] text-slate-100 overflow-x-hidden">
 
-          {/* LEFT SIDE - TEXT */}
+      {/* HERO SECTION */}
+
+      <section className="relative mx-auto max-w-6xl px-4 py-28 md:px-6">
+
+        {/* floating glow */}
+        <motion.div
+          variants={floatingGlow}
+          animate="animate"
+          className="absolute top-0 left-1/2 -translate-x-1/2
+          w-[500px] h-[200px] bg-[#06B6D4]/20 blur-[120px] rounded-full"
+        />
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid gap-14 md:grid-cols-2 items-center"
+        >
+
+          {/* TEXT */}
+
           <div className="space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#06B6D4]">
-              About Us
-            </p>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-              The foundation behind
-              <span className="block bg-gradient-to-r from-[#FACC15] via-[#06B6D4] to-[#E5E7EB] bg-clip-text text-transparent">
-                resilient IT infrastructure.
+            <motion.p
+              variants={item}
+              className="text-xs uppercase tracking-[0.35em] text-[#06B6D4]"
+            >
+              About Esperto Networks
+            </motion.p>
+
+            <motion.h1
+              variants={item}
+              className="text-4xl md:text-5xl font-semibold leading-tight"
+            >
+              Engineering IT Infrastructure
+              <span className="block bg-gradient-to-r from-[#FACC15] via-[#06B6D4] to-white bg-clip-text text-transparent">
+                across India.
               </span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-              We align IT talent, streamline support operations, and deploy
-              enterprise-grade infrastructure to help businesses operate with
-              stability, confidence, and efficiency.
-            </p>
+            <motion.p
+              variants={item}
+              className="text-slate-300 leading-relaxed"
+            >
+              Esperto Networks is a professional IT service and support
+              provider with over <b>13 years of industry expertise</b>.
+              Through a nationwide network of certified engineers,
+              we deliver enterprise-grade infrastructure solutions
+              for organizations across India.
+            </motion.p>
 
-            <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-              Our engineering-led approach ensures quicker issue resolution,
-              higher uptime, and scalable performance across cloud, network,
-              and on-premise environments.
-            </p>
           </div>
 
-          {/* RIGHT SIDE - IMAGE WITH ROYAL CONTRAST */}
-          <div className="relative">
-            {/* Glow behind image */}
-            <div className="absolute inset-0 -z-10 rounded-3xl bg-[#06B6D4]/20 blur-2xl" />
+          {/* IMAGE */}
 
-            {/* <div className="overflow-hidden rounded-3xl border border-[#06B6D4]/30 shadow-[0_10px_40px_rgba(0,0,0,0.6)]"> */}
-            <div className="overflow-hidden rounded-3xl border border-[#050816] shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
-              <img
-                src="/about.png"alt="About us" className="w-full h-full object-cover contrast-125 brightness-110"
+          <motion.div
+            variants={item}
+            whileHover={{ scale: 1.04 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+
+            <div className="absolute inset-0 -z-10 bg-[#06B6D4]/20 blur-3xl rounded-3xl" />
+
+            <div className="overflow-hidden rounded-3xl border border-[#06B6D4]/20 shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
+
+              <motion.img
+                src="/about.png"
+                alt="Esperto Networks"
+                className="w-full h-full object-cover brightness-110 contrast-125"
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.6 }}
               />
-            </div>
-          </div>
 
-        </div>
+            </div>
+
+          </motion.div>
+
+        </motion.div>
+
       </section>
 
 
-{/*mission and vision  section ----> 2 */}
+      {/* STORY SECTION */}
 
-{/* MISSION & VISION — ROYAL NEON CONTRAST BLOCK */}
-<section className="relative w-full py-60 px-4 md:px-8"
-style={{
-          backgroundImage: "url('/hero.png')", // put image in public/
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
->
+      <section className="relative py-40 bg-gradient-to-b from-[#0A1A2F] via-[#0F4C5C] to-transparent">
 
-  {/* Top Blue + Neon Green Contrast Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A2F] via-[#0F4C5C] to-transparent" />
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto text-center px-6"
+        >
 
-  {/* Neon Green Aura */}
-  <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-56 w-96 rounded-full bg-[#39FF14]/20 blur-[140px]" />
+          <motion.h2
+            variants={item}
+            className="text-3xl md:text-5xl font-bold
+            bg-gradient-to-r from-[#39FF14] via-white to-[#06B6D4]
+            bg-clip-text text-transparent"
+          >
+            Built on Vision
+          </motion.h2>
 
-  <div className="relative mx-auto max-w-6xl">
-    <div className="grid gap-20 md:grid-cols-2">
+          <motion.p
+            variants={item}
+            className="mt-8 text-slate-300 leading-relaxed"
+          >
+            Esperto Networks was founded with a simple but powerful vision —
+            to make enterprise-grade IT support accessible and affordable
+            for every business.
+          </motion.p>
 
-      {/* ESPERTO — Mission */}
-      <div className="space-y-6">
-        {/* Label */}
-        <h3 className="text-sm font-bold uppercase tracking-[0.55em] text-[#39FF14]/95">
-          ESPERTO
-        </h3>
+          <motion.p
+            variants={item}
+            className="mt-6 text-slate-300 leading-relaxed"
+          >
+            Over time we built a robust infrastructure network capable of
+            supporting everything from small offices to complex data center
+            deployments.
+          </motion.p>
 
-        {/* Fancy Heading */}
-        <p className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight bg-gradient-to-r from-[#39FF14] via-[#E5E7EB] to-[#06B6D4] bg-clip-text text-transparent tracking-tight">
-          Defining our pursuit
-        </p>
+        </motion.div>
 
-        {/* Description */}
-        <p className="text-slate-100/90 text-sm md:text-base leading-relaxed max-w-md">
-          Delivering sovereign-grade IT stewardship—precise, resilient, and
-          architected for operational continuity across every tier of enterprise.
-        </p>
-      </div>
-
-      {/* VISION */}
-      <div className="space-y-6">
-        {/* Label */}
-        <h3 className="text-sm font-bold uppercase tracking-[0.55em] text-[#39FF14]/95">
-          Vision
-        </h3>
-
-        {/* Fancy Heading */}
-        <p className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight bg-gradient-to-r from-[#06B6D4] via-[#E5E7EB] to-[#39FF14] bg-clip-text text-transparent tracking-tight">
-          Our forward trajectory
-        </p>
-
-        {/* Description */}
-        <p className="text-slate-100/90 text-sm md:text-base leading-relaxed max-w-md">
-          Engineering a nationally unified IT ecosystem—secure, scalable, and
-          future-aligned—empowering organisations to transcend geographic and
-          infrastructural limitations.
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-</section>
+      </section>
 
 
-{/* section 3 values  */}
+      {/* EXPERTISE SECTION */}
 
-{/* VALUES GRID — 3x3 with CONTRAST BG */}
-<section className="relative w-full py-20 px-4 md:px-8 bg-gradient-to-b from-[#105c7a] via-[#4d689c] to-[#79838f]"
-  
-  >
+      <section className="py-40">
 
-  <div className="mx-auto py-20 max-w-5xl">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16"
+        >
 
-    {/* Intro */}
-    <p className="text-slate-800  text-center md:text-lg leading-relaxed font-medium max-w-7xl mb-12">
-      We are powered by care. It sharpens our discipline, strengthens our engineering, 
-      and shapes every client relationship. It drives us to deliver precise outcomes, 
-      dependable support, and sustained value across India.
-    </p>
+          <motion.div variants={item} whileHover={{ y: -8 }}>
+            <h3 className="text-3xl font-bold mb-4">
+              Human Expertise
+            </h3>
 
-    {/* 3×3 GRID */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+            <p className="text-slate-300 leading-relaxed">
+              Our engineers continuously train in virtualization,
+              cloud infrastructure, IP surveillance and
+              unified communication systems.
+            </p>
+          </motion.div>
 
-      {/* 1 */}
-      <div className="flex items-start gap-4">
-        <img src="/icons/client-centric.png" className="h-10 w-10 opacity-90 mt-1" />
-        <div>
-          <p className="text-lg font-bold text-slate-900">Client-Centric</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Every decision grounded in business context.
-          </p>
-        </div>
-      </div>
+          <motion.div variants={item} whileHover={{ y: -8 }}>
+            <h3 className="text-3xl font-bold mb-4">
+              Nationwide Presence
+            </h3>
 
-      {/* 2 */}
-      <div className="flex items-start gap-4">
-        <img src="/icons/reliable.png" className="h-10 w-10 opacity-90 mt-1" />
-        <div>
-          <p className="text-lg font-bold text-slate-900">Reliable</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Predictable delivery and consistent outcomes.
-          </p>
-        </div>
-      </div>
+            <p className="text-slate-300 leading-relaxed">
+              Engineers stationed across Tier 1, 2 and 3 cities
+              enable rapid deployment and reliable support
+              across India.
+            </p>
+          </motion.div>
 
-      {/* 3 */}
-      <div className="flex items-start gap-4">
-        <img src="/icons/skilled.png" className="h-10 w-10 opacity-90 mt-1" />
-        <div>
-          <p className="text-lg font-bold text-slate-900">Skilled</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Certified engineers with deep specialization.
-          </p>
-        </div>
-      </div>
+        </motion.div>
 
-      {/* 4 */}
-      <div className="flex items-start gap-4">
-        <img src="/icons/secure.png" className="h-10 w-10 opacity-90 mt-1" />
-        <div>
-          <p className="text-lg font-bold text-slate-900">Secure</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Hardened architectures, protection at every layer.
-          </p>
-        </div>
-      </div>
-
-      {/* 5 */}
-      <div className="flex items-start gap-4">
-        <img src="/icons/agile.png" className="h-10 w-10 opacity-90 mt-1" />
-        <div>
-          <p className="text-lg font-bold text-slate-900">Agile</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Fast response with nationwide reach.
-          </p>
-        </div>
-      </div>
-
-      {/* 6 */}
-      <div className="flex items-start gap-4">
-        <img src="/icons/innovative.png" className="h-10 w-10 opacity-90 mt-1" />
-        <div>
-          <p className="text-lg font-bold text-slate-900">Innovative</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Modern tools fused with expert engineering.
-          </p>
-        </div>
-      </div>
-
-      {/* 7 */}
-      <div className="flex items-start gap-4">
-        <img src="/icons/responsible.png" className="h-10 w-10 opacity-90 mt-1" />
-        <div>
-          <p className="text-lg font-bold text-slate-900">Responsible</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Ethical operations and transparent communication.
-          </p>
-        </div>
-      </div>
-
-      {/* 8 */}
-      <div className="flex items-start gap-4">
-        <img src="/icons/intelligent.png" className="h-10 w-10 opacity-90 mt-1" />
-        <div>
-          <p className="text-lg font-bold text-slate-900">Intelligent</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Data-backed insights and optimized workflows.
-          </p>
-        </div>
-      </div>
-
-      {/* 9 — optional empty or add value later */}
-      <div></div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
 
-{/* apply for job  */}
+      {/* CTA */}
 
+      <section className="bg-[#0A1A2F] py-20">
 
-<section className="bg-[#0A1A2F] py-16 text-slate-100">
-  <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between"
+        >
 
-    {/* Left Text */}
-    <h2 className="text-2xl md:text-4xl font-semibold mb-8 md:mb-0">
-      What can we help you achieve?
-    </h2>
+          <motion.h2
+            variants={item}
+            className="text-3xl md:text-4xl font-semibold mb-8 md:mb-0"
+          >
+            What can we help you achieve?
+          </motion.h2>
 
-    {/* Right Side Buttons (Vertical + Oval + Wider) */}
-    <div className="flex flex-col items-start gap-4">
+          <motion.div
+            variants={item}
+            className="flex flex-col gap-4"
+          >
 
-      <a 
-        href="/contact"
-        className="w-60 text-center px-8 py-4 rounded-full bg-[#06B6D4] text-[#0A1A2F] font-semibold text-base hover:bg-[#08c3e5] transition duration-300 shadow-md"
-      >
-        Work With Us
-      </a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/contact"
+              className="px-8 py-4 rounded-full bg-[#06B6D4] text-[#0A1A2F] font-semibold hover:bg-[#08c3e5]"
+            >
+              Work With Us
+            </motion.a>
 
-      <a 
-        href="/freelancer"
-        className="w-60 text-center px-8 py-4 rounded-full border border-slate-300 text-slate-100 font-semibold text-base hover:border-white transition duration-300"
-      >
-        Apply for Job
-      </a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/freelancer"
+              className="px-8 py-4 rounded-full border border-slate-300 hover:border-white"
+            >
+              Apply for Job
+            </motion.a>
 
-    </div>
+          </motion.div>
 
-  </div>
-</section>
+        </motion.div>
 
+      </section>
 
     </div>
   );
