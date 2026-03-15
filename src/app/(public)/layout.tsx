@@ -7,6 +7,9 @@ import Footer from "./_components/Footer";
 export const metadata: Metadata = {
   title: "Esperto Networks",
   description: "Networking Services",
+  icons:{
+    icon:'/esperto.png'
+  }
 };
 
 export default function RootLayout({
