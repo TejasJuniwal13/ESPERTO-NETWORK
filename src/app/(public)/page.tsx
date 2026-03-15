@@ -219,7 +219,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="/career"
+                href="/carrer"
                 className="w-60 text-center px-8 py-4 rounded-full border border-slate-300 font-semibold"
               >
                 Apply for Job
