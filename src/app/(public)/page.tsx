@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 
+
 const clients = [
   "/clients/gsk.png",
   "/clients/alexis.png",
@@ -12,8 +13,20 @@ const clients = [
   "/clients/mahindra.png",
   "/clients/renovision.png",
   "/clients/tislabs.png",
-  "/clients/wipro.png"
+  "/clients/wipro.png",
+  "/clients/LCL.png",
+  "/clients/syndrome.jpeg",
+  "clients/LA-tech.png",
+  "clients/ncs.png",
+  "clients/orangeTM.png",
+  "clients/fedex.png",
+  "clients/ncs.png",
+  "clients/TP.png",
+  "clients/ni.png",
+  "clients/people.png",
+  "clients/vcm.png",
 ];
+
 
 export default function Home() {
   return (
